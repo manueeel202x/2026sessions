@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import modelo.Operacion;
 import vista.frmOperaciones;
 
@@ -18,6 +20,15 @@ public class ControladorOperaciones {
     public ControladorOperaciones(Operacion modelo, frmOperaciones vista){
         this.modelo = modelo;
         this.vista = vista;
+        this.vista.btnSumar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modelo.setOp1(Integer.parseInt(vista.txtOperador1.getText()));
+                modelo.setOp2(Integer.parseInt(vista.txtOperador2.getText()));
+                vista.lblResultado.setText(String.valueOf(modelo.sumar()));
+            }
+        
+        });
     }
     
     public void iniciar(){
