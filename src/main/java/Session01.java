@@ -1,9 +1,10 @@
 
+import controlador.ControladorOperaciones;
 import java.util.Scanner;
-import operacion.operacion;
+import modelo.Operacion;
+import vista.frmOperaciones;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 /**
  *
@@ -12,6 +13,14 @@ import operacion.operacion;
 public class Session01 {
 
     public static void main(String[] args) {
+        
+        Operacion modelo = new Operacion(20,30);
+        frmOperaciones vista = new frmOperaciones();
+        
+        ControladorOperaciones controlador = new ControladorOperaciones(modelo, vista);
+        controlador.iniciar();
+                
+        /*
         Scanner teclado = new Scanner(System.in);
         
         System.out.println("op1: ");
@@ -19,10 +28,10 @@ public class Session01 {
         System.out.println("op2: ");
         int op2 = teclado.nextInt();
         
-        operacion operacion1 = new operacion(op1,op2);
+        Operacion operacion1 = new Operacion(op1,op2);
         operacion1.printOps();
         
         System.out.println("suma: " + operacion1.sumar());
-        
+        */
     }
 }
