@@ -12,7 +12,7 @@ public class operacion {
     private  int op1;
     private  int op2;
     
-    //constructores:Vvv
+    //constructores
     public operacion(int a, int b){
         op1 = a;
         op2 = b;
@@ -32,9 +32,17 @@ public class operacion {
         System.out.println("operador 2: " + op2);
     }
     
-    //operacionesxddd
+    //operaciones
     public  int sumar(){
         return op1 + op2;
+    }
+    
+    public  int multiplicar(){
+        return op1*op2;
+    }
+    
+    public int restar(){
+        return op1 - op2;
     }
     
     
